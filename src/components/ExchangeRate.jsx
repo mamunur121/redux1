@@ -4,14 +4,15 @@ import { CurrencyCodePicker } from "./CurrencyCodePicker";
 import { AmountField } from "./AmountField";
 import { getExchangeRates } from "../api";
 import { useSelector } from "react-redux";
+import { getAmount, getCurrencyCode } from "../store/rates.js";
 
 const supportedCurrencies = ["USD", "EUR", "JPY", "CAD", "GBP", "MXN"];
 
 export function ExchangeRate() {
   // const [amount, setAmount] = useState("1.50");
-  const amount = useSelector((state) => state.rates.amount);
+  const amount = useSelector(getAmount);
   // const [currencyCode, setCurrencyCode] = useState("USD");
-  const currencyCode = useSelector((state) => state.rates.currencyCode);
+  const currencyCode = useSelector(getCurrencyCode);
   const [currencyData, setCurrencyData] = useState({ USD: 1.0 });
 
   // fetch the exchange rates each time currency code changes

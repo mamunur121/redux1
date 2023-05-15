@@ -1,5 +1,5 @@
 const initialState = {
-  name: "John Doe",
+  fullName: "John Doe",
   loggedIn: false,
 };
 
@@ -8,3 +8,8 @@ const userReducer = (state = initialState, action) => {
 };
 
 export default userReducer;
+
+export const getName = (state) => {
+  return state.user.fullName.split(" ")[0];
+};
+export const getLoggedIn = (state) => state.user.loggedIn;
