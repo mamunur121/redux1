@@ -18,3 +18,18 @@ export default rateReducer;
 
 export const getAmount = (state) => state.rates.amount;
 export const getCurrencyCode = (state) => state.rates.currencyCode;
+
+// action types
+export const UPDATE_AMOUNT = "rates/updateAmount";
+export const UPDATE_CURRENCY_CODE = "rates/updateCurrencyCode";
+
+// action creators
+export const updateAmount = (amount) => ({
+  type: UPDATE_AMOUNT,
+  payload: amount,
+});
+
+export const updateCurrencyCode = (currencyCode) => ({
+  type: UPDATE_CURRENCY_CODE,
+  payload: currencyCode,
+});
