@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 export function CurrencyCodePicker({ supportedCurrencies, currencyCode }) {
   const dispatch = useDispatch();
   const setCurrencyCode = (e) => {
-    dispatch({ type: "updateCurrencyCode", payload: e.target.value });
+    dispatch({ type: "rates/updateCurrencyCode", payload: e.target.value });
   };
   return (
     <select
