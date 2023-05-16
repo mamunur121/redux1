@@ -7,9 +7,7 @@ import {
   getCurrencyCode,
   getCurrencyData,
   supportedCurrencies,
-  updateCurrencyData,
 } from "../store/rates.js";
-import { useEffect } from "react";
 
 export function ExchangeRate() {
   const dispatch = useDispatch();
@@ -26,9 +24,9 @@ export function ExchangeRate() {
   //     setCurrencyData(rates);
   //   });
   // }, [currencyCode]);
-  useEffect(() => {
-    dispatch(updateCurrencyData(currencyCode));
-  }, [currencyCode]);
+  // useEffect(() => {
+  //   dispatch(updateCurrencyData(currencyCode));
+  // }, [currencyCode]);
 
   return (
     <>
