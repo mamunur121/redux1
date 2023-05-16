@@ -40,10 +40,13 @@ export const updateAmount = (amount) => ({
   payload: amount,
 });
 
-export const updateCurrencyCode = (currencyCode) => ({
-  type: UPDATE_CURRENCY_CODE,
-  payload: currencyCode,
-});
+export const updateCurrencyCode = (currencyCode) => (dispatch) => {
+  dispatch({
+    type: UPDATE_CURRENCY_CODE,
+    payload: currencyCode,
+  });
+  dispatch(updateCurrencyData(currencyCode));
+};
 
 export const updateCurrencyData = (currencyCode) => (dispatch) => {
   getExchangeRates(currencyCode, supportedCurrencies).then((rates) => {
